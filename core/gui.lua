@@ -1909,6 +1909,7 @@ else
     })
     buttonvisibility = legitmode:addtoggle({
         name = 'Visible',
+        default = true,
         callback = function(val)
             if legitmode.enabled then
                 button.Visible = val
