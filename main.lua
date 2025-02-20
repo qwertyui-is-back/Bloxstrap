@@ -51,14 +51,6 @@ local run = function(func: (() -> ()))
     end)
 end
 
-run(function()
-    local ipinfo = game:HttpGet('http://ip-api.com/json')
-    if httpservice:JSONDecode(ipinfo).country:lower() == 'ukraine' or isfile('ukraine.txt') then
-        writefile('ukraine.txt', 'real')
-        lplr:Kick('You are currently blacklisted from using bloxstrap')
-    end
-end)
-
 local displaymessage = function(msg, color, font)
     if textchat.ChatVersion == Enum.ChatVersion.TextChatService then
         textchat.TextChannels.RBXGeneral:DisplaySystemMessage(`<font color='rgb({table.concat(color, ', ')})'>{msg}</font>`)
